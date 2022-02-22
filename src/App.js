@@ -49,6 +49,12 @@ function App() {
     })
   }
 
+  const updateUser = (id, updatedUser) =>{
+    setEditing(false)
+
+    setUsers(users.map(user => (user.id === id ? updatedUser : user)))
+  }
+
 
   return (
     <div className="container">
@@ -61,6 +67,7 @@ function App() {
                 <h2>Edit user</h2>
                 <EditUserForm 
                   currentUser = {currentUser}
+                  updateUser ={updateUser}
                 />
               </div>
             ) : (
