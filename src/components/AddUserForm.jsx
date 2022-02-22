@@ -6,7 +6,6 @@ const AddUserForm = (props) => {
     const { register, handleSubmit, formState: { errors } } = useForm()
 
     const onSubmit = (data, e) => {
-        console.log(data)
         props.addUser(data)
         e.target.reset()
     }
